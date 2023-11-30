@@ -1,6 +1,5 @@
 import { HttpStatus } from '../helpers/httpStatus'
-import { roomService } from '@/services/rooms.service'
-
+import { roomService } from '@/services/rooms'
 import type { Request, Response, NextFunction } from 'express'
 
 const getAllRooms = async (_req: Request, res: Response, next: NextFunction) => {

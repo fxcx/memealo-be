@@ -1,14 +1,16 @@
 import { Router } from 'express'
-import { getAllRooms, createRoom, getRoom, updateRoom } from '@/controllers/room.controller'
+import { createRoom, getAllRooms, getRoom, updateRoom } from '@/controllers/rooms.controller'
 
-const router = Router()
+export const roomsRouter = () => {
+  const roomsRouter = Router()
 
-router.route('/')
-  .get(getAllRooms)
-  .post(createRoom)
+  roomsRouter.route('/rooms')
+    .get(getAllRooms)
+    .post(createRoom)
 
-router.route('/:id')
-  .get(getRoom)
-  .put(updateRoom)
+  roomsRouter.route('/rooms/:id')
+    .get(getRoom)
+    .put(updateRoom)
 
-export { router }
+  return roomsRouter
+}
